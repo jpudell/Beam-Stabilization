@@ -382,7 +382,7 @@ class MyWindow(PyQt5.QtWidgets.QMainWindow):
         self.correct.calculateCenter(mir, image)
         self.correct.updateMirrorDictionary(mir, image)
         self.correct.getCoM(mir)
-        self.correct.getCurrentCenter(mir, self.fitCenter)
+        self.correct.getCurrentCenter(mir, self.fitCenter())
 
         if self.newStart < 2:
             self.setPlotBoundaries()
@@ -910,7 +910,7 @@ class Correction:
         """
 
         try:
-            if var == 'Gauss':
+            if var == 'gauss':
                 calcDict[mir]["CurrentCenter_X"] = calcDict[mir]["Center_GaussFitX"]
                 calcDict[mir]["CurrentCenter_Y"] = calcDict[mir]["Center_GaussFitY"]
             else:
